@@ -1,4 +1,4 @@
-## Grid layout using float and calck, the way
+## Grid layout using float and calc, the way
 <br />
 A simple grid component created using float and calc.
 <br />
