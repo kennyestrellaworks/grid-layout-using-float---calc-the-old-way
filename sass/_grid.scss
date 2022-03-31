@@ -1,0 +1,72 @@
+@use 'colors';
+@use 'variables';
+
+.grid {
+    margin-top: variables.$gutter-width;
+}
+.row {
+    & .col-standard {
+        background-color: colors.$color-amber800;
+    }
+    & .col-stacked {
+        background-color: colors.$color-amber900;
+    }
+    &:not(:last-child) {
+        margin-bottom: variables.$gutter-width;
+    }
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    & [class^="col-"] {
+        float: left;        
+        font-size: 1.8rem;
+        padding: 2rem 0 2rem 2rem;
+        border-radius: 1rem;
+        color: colors.$color-yellow100;
+    }
+    & [class^="col-"]:not(:last-child) {
+        margin-right: variables.$gutter-width;
+    }
+}
+// Standard columns //////////////
+.col-1-of-1 {
+    width: 100%;
+}
+.col-1-of-2 {
+    width: calc((100% - variables.$gutter-width) / 2);    
+}
+.col-1-of-3 {
+    width: calc((100% - (variables.$gutter-width * 2)) / 3);
+}
+.col-1-of-4 {
+    width: calc((100% - (variables.$gutter-width * 3)) / 4);
+}
+.col-1-of-5 {
+    width: calc((100% - (variables.$gutter-width * 4)) / 5);
+}
+.col-1-of-6 {
+    width: calc((100% - (variables.$gutter-width * 5)) / 6);
+}
+.col-1-of-7 {
+    width: calc((100% - (variables.$gutter-width * 6)) / 7);
+}
+// Stacked columns //////////////
+.col-2-of-3 {
+    width: calc((((100% - (variables.$gutter-width * 2)) / 3) * 2) + variables.$gutter-width);
+}
+.col-3-of-4 {
+    width: calc((((100% - (variables.$gutter-width * 3)) / 4) * 3) + (variables.$gutter-width * 2));
+}
+.col-4-of-5 {
+    width: calc((((100% - (variables.$gutter-width * 4)) / 5) * 4) + (variables.$gutter-width * 3));
+}
+.col-5-of-6 {
+    width: calc((((100% - (variables.$gutter-width * 5)) / 6) * 5) + (variables.$gutter-width * 4));
+}
+.col-6-of-7 {
+    width: calc((((100% - (variables.$gutter-width * 6)) / 7) * 6) + (variables.$gutter-width * 5));
+}
+
+
